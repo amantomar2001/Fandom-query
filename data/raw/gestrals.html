@@ -1,0 +1,332 @@
+<main class="page__main" lang="en">
+<div class="page-side-tools__wrapper">
+<div class="page-side-tools">
+<button aria-label="Collapse" class="page-side-tool content-size-toggle" data-tooltip-attached="1" data-wds-tooltip="Collapse" data-wds-tooltip-position="right" name="content-size-toggle"><svg class="wds-icon wds-icon-small">
+<use href="#wds-icons-zoom-out-small"></use>
+</svg></button>
+<a aria-label="Sign in to edit" class="page-side-tool page-side-edit" data-tooltip-attached="1" data-tracking-label="log-in-edit-side-tool" data-wds-tooltip="Sign in to edit" data-wds-tooltip-position="right" href="https://auth.fandom.com/signin?redirect=https%3A%2F%2Fclair-obscur.fandom.com%2Fwiki%2FLost_Gestrals%3Fveaction%3Dedit&amp;uselang=en" id="log-in-edit-side-tool">
+<svg class="wds-icon wds-icon-small"><use xlink:href="#wds-icons-pencil-small"></use></svg> </a>
+</div>
+</div>
+<div class="page-header" id="page-header" tabindex="-1">
+<div class="page-header__top">
+<div class="page-header__meta">
+</div>
+</div>
+<div class="page-header__bottom">
+<div class="page-header__title-wrapper">
+<h1 class="page-header__title" id="firstHeading">
+<span class="mw-page-title-main">Lost Gestrals</span> </h1>
+</div>
+<div class="page-header__actions" id="p-views">
+<a class="wds-button wds-is-text page-header__action-button" data-tracking-label="comments-button" href="#articleComments">
+<div class="button-counter" id="article-comments-button" style="opacity: 0;"></div>
+<svg class="wds-icon wds-icon-small"><use xlink:href="#wds-icons-comment-small"></use></svg> </a>
+<a class="wds-button wds-is-text page-header__action-button has-label" data-tracking-label="log-in-edit" href="https://auth.fandom.com/signin?redirect=https%3A%2F%2Fclair-obscur.fandom.com%2Fwiki%2FLost_Gestrals%3Fveaction%3Dedit&amp;uselang=en" id="log-in-edit">
+<svg class="wds-icon wds-icon-small"><use xlink:href="#wds-icons-pencil-small"></use></svg>						Sign in to edit					</a>
+<div class="wds-dropdown">
+<div aria-controls="p-cactions" aria-label="Page Tools" class="wds-dropdown__toggle wds-button wds-is-text page-header__action-button" data-tracking-label="dropdown-actions" role="button">
+<svg class="wds-icon wds-icon-small"><use xlink:href="#wds-icons-more-small"></use></svg> </div>
+<div class="wds-dropdown__content wds-is-right-aligned wds-is-not-scrollable" id="p-cactions">
+<ul class="wds-list wds-is-linked">
+<li>
+<a accesskey="h" data-tracking-label="ca-history-dropdown" href="/wiki/Lost_Gestrals?action=history" id="ca-history">
+											History										</a>
+</li>
+<li>
+<a data-tracking-label="ca-purge-dropdown" href="/wiki/Lost_Gestrals?action=purge" id="ca-purge">
+											Purge										</a>
+</li>
+<li>
+<a accesskey="t" class="new" data-tracking-label="ca-talk-dropdown" href="/wiki/Talk:Lost_Gestrals?action=edit&amp;redlink=1" id="ca-talk">
+											Talk (0)										</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="page-content ve-init-mw-desktopArticleTarget-targetContainer" id="content">
+<script data-name="featured-video-mapped-to-wiki">
+	(function () {
+		// we can't use mw.config here because it's too early so we need to pass this data in different way
+		const videoDetails = {
+			mapping: {"mediaId":"CR0MZ2ZP","connatixPlaylistId":"fa733fa7-0131-48d3-a444-611bc76031fe","impressionsPerSession":3,"isDefaultMapping":true},
+			impressionsPerSession: 3,
+		};
+		const videoBridgeCountries = ["AE","AG","AL","AM","AR","AT","AU","AZ","BA","BB","BD","BG","BH","BN","BO","BR","BS","BY","CA","CH","CL","CN","CO","CR","CU","CY","CZ","DE","DK","DO","DZ","EC","EE","EG","ES","FI","FR","GB","GE","GF","GG","GH","GP","GR","GT","GU","GY","HK","HN","HR","HU","ID","IE","IL","IM","IN","IQ","IR","IS","IT","JE","JM","JO","JP","KE","KG","KH","KR","KW","KY","KZ","LA","LB","LK","LT","LU","LV","LY","MA","MD","ME","MK","MM","MN","MO","MQ","MT","MU","MV","MX","MY","NG","NI","NO","NP","NZ","OM","PA","PE","PH","PK","PL","PR","PS","PT","PY","QA","RE","RO","RS","RU","SA","SC","SE","SG","SI","SK","SV","TD","TH","TN","TR","TT","TW","UA","US","UY","UZ","VE","VI","VN","ZA","ZW"];
+		const tier3VideoBridgeCountries = ["GB","BE","NL","DE","AU","MX","AR","FR","MD","CA","ES","IT","PE","CO","CL","NZ"];
+		let hasVideoOnPage = null;
+
+		function getCookieValue(cookieName) {
+			const cookieSplit = ('; ' + document.cookie).split('; ' + cookieName + '=');
+			return cookieSplit.length === 2 ? cookieSplit.pop().split(';').shift() : null;
+		}
+
+		function hasMaxedOutPlayerImpressionsInWiki() {
+			const impressionsSoFar = Number(getCookieValue('playerImpressionsInWiki')) || 0;
+			const allowedImpressions = Number(videoDetails.impressionsPerSession);
+
+			return impressionsSoFar >= allowedImpressions;
+		}
+
+		function getCountryCode() {
+			try {
+				return JSON.parse(decodeURIComponent(getCookieValue('Geo'))).country.toLowerCase();
+			} catch {
+				return null;
+			}
+		}
+
+		function isVideoBridgeAllowedForCountry() {
+			const countryCode = getCountryCode();
+
+			if (!countryCode) {
+				return false;
+			}
+
+			// If it's a default mapping, then check the country whitelist from the default mapping.
+			if (videoDetails?.mapping?.isDefaultMapping) {
+				// If the wiki is classified as a tier3 wiki, then check the country whitelist from the tier3VideoBridge whitelist.
+				const allowedCountriesForTier3Wikis = tier3VideoBridgeCountries.map(function (allowedTier3CountryCode) {
+					return allowedTier3CountryCode.toLowerCase();
+				})
+
+				return allowedCountriesForTier3Wikis.indexOf(countryCode) !== -1;
+			} else {
+				// If not a default mapping wiki (so it's a wiki mapping), then check the country whitelist from the videoBridge whitelist
+				const allowedCountries = videoBridgeCountries.map(function (allowedCountryCode) {
+					return allowedCountryCode.toLowerCase();
+				});
+
+				return allowedCountries.indexOf(countryCode) !== -1;
+			}
+		}
+
+		window.fandomIsVideoPossible = function () {
+			if (hasVideoOnPage === null) {
+				hasVideoOnPage =
+					videoDetails.mapping &&
+					isVideoBridgeAllowedForCountry() &&
+					!hasMaxedOutPlayerImpressionsInWiki();
+			}
+
+			return hasVideoOnPage;
+		};
+
+		window.canPlayVideo = function () {
+			return window.fandomIsVideoPossible()
+		};
+
+		if (!window.canPlayVideo()) {
+			document.body.classList.add('no-featured-video');
+		} else {
+			document.body.classList.add('has-featured-video');
+		}
+	})();
+</script>
+<div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject">
+<meta content="Netflix: Electric State Cast Interview" itemprop="name"/>
+<meta content="PT02M51S" itemprop="duration"/>
+<meta content="We sat down with the cast of Electric State, coming March 14th on Netflix." itemprop="description"/>
+<meta content="https://cdn.jwplayer.com/v2/media/AFCYA1P7/poster.jpg?width=720" itemprop="thumbnailUrl"/>
+<meta content="https://cdn.jwplayer.com/videos/AFCYA1P7-cSpmBcaY.mp4" itemprop="contentURL"/>
+<meta content="2025-03-10T17:00:00+00:00" itemprop="uploadDate"/>
+<div class="featured-video-player-container" id="featured-video__player-container"></div>
+</div>
+<div class="mw-body-content" id="mw-content-text"><!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-N6XD44P" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b>Lost Gestrals</b> is an optional side quest and achievement in <i><a href="/wiki/Clair_Obscur:_Expedition_33" title="Clair Obscur: Expedition 33">Clair Obscur: Expedition 33</a></i>.
+</p><p>Scattered across the <a href="/wiki/Continent" title="Continent">Continent</a> are 9 lost <a href="/wiki/Gestral" title="Gestral">gestrals</a>. Finding each one will give you a basic reward, while finding all of them gives the <a href="/wiki/Pro_Retreat" title="Pro Retreat">Pro Retreat</a> <a href="/wiki/Pictos" title="Pictos">pictos</a> and achievement. Finding the first one will automatically go back to <a href="/wiki/Camp" title="Camp">camp</a>, but make sure to speak to <span class="new" data-uncrawlable-url="L3dpa2kvU2FzdHJvP2FjdGlvbj1lZGl0JnJlZGxpbms9MQ==" title="Sastro (page does not exist)">Sastro</span> so you can get your rewards each time you find one.
+</p><p>While its optional, it's recommended you do it at least to the fourth one, as that gives you the ability to destroy <a href="/wiki/Paint_Spikes" title="Paint Spikes">Paint Spikes</a>.
+</p>
+<div class="gpt-ad" data-gpt-page-params='{"exp_bucket":"69","aeVer":"v151.3.0","npa":"0","rdp":"0","ppid":"e50f6279-b275-427f-879d-46ce786663f2","pvuid":"9fc41222-58fe-4e23-a23b-1d6796eac27e","browser":"Chrome","adGroup":["100","95","90","85","80","75","70","65","60","55","50","45","40","35","30","25","20","15"],"brand":"fandom","cmp":"1t","ar":"4:3","dmn":"fandomcom","geo":"IN","hostpre":"clair-obscur","original_host":"fandom","skin":"ucp_desktop","uap":"none","uap_c":"none","is_mobile":"0","odyssey":"0_3675086","artid":"4311","kid_wiki":"0","lang":"en","s0":"gaming","s0c":[],"s0v":"games","s1":"_clairobscur","s2":"article-ic","wpage":"lost_gestrals","word_count":"323","pv":"3","pvg":"5","cattax":6,"cat":["1217","bsr004","1014"],"pagecat":["1217","bsr004","1014"],"bundles":["VIDEO_TIER_3_BUNDLE"],"labrador":["icAssertiveYield_A_95","icReplaceOpenWebWithMidBoxAd_B_98","icConnatixPlayer_A_50"],"AU_SEG":"-1","li-module-enabled":["t0"],"ids":"-1","bsc":"-1","abs":"-1","boi":"AAAAPAxxxxxxxxxx","experiment_groups":["icb-no-bidders-experiment-disabled","prediction_0_uap_0"],"fs":"t"}' data-gpt-slot-params='{"tvp":"-1","vlp":"-1","loc":"middle","pos":["outstream"],"src":["gpt"],"rv":"1","fs":"t"}' id="incontent_player"><script async="" data-loaded="true" data-variant="" pubname="fandomcom" src="https://player.anyclip.com/anyclip-widget/lre-widget/prod/v1/src/lre.js" widgetname="001w000001Y8ud2AAB_M8446"></script><div class="acw ac-widget-ph ac-reset" data-loaded-pid="fandomcom" data-loaded-wid="001w000001Y8ud2AAB_M8446" style="width: 533px;"><div class="ac-lre-main-widget-container ac-lre-player-ph-ext ac-lre-ph-playlist-hide-scroll-bar" id="ac-lre-player-ph-ext-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM" style="--ac-lre-cui-leftBrandingColor: #828282; --ac-lre-cui-progressBarColor: #7881FF; --ac-lre-cui-timestampTooltipColor: #7881FF; --ac-lre-cui-volumeBarColor: #7881FF; --ac-lre-cui-settingsMenuHighlightColor: #7881FF; --ac-lre-cui-leftBrandingSize: 14px; --ac-lre-placeholder-height: 299px; --ac-lre-aspect-ratio-pt: 56.250%;" tabindex="0"><div class="h001w000001Y8ud2AAB_M8446 d001w000001Y8ud2AAB_M8446 ac-lre-as-desktop" id="ac-lre-player-ph-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM"><div class="w001w000001Y8ud2AAB_M8446 luminous-theme"><div class="ac-player-ph"><div class="ac-player-wrapper" style="--video-width: 533px; --video-height: 299.8125px;"><div class="ac-lre-player"><div class="video-js vjs-default-skin ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM-dimensions vjs-fluid vjs-controls-enabled vjs-workinghover vjs-v7 ac-show-fullscreen-control live-set-max-cc-rows vjs-has-started cc-hidden vjs-user-inactive vjs-playing vjs-layout-medium lx-size-1 lx-range-1" id="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM" lang="en" playsinline="true" role="region" style="--ac-lre-ccsz-mul: 1.1em; --ac-lre-ccsz-min: 10px; --ac-lre-ccsz-max: 36px; --ac-lre-ccsz-live-rows: 2;" tabindex="-1" translate="no"><video class="vjs-tech" crossorigin="anonymous" id="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_html5_api" playsinline="playsinline" poster="https://cdn5-fstl-tf.anyclip.com/yYzViYkBd4bFyu3qpnNY/1690235941874_640x360_thumbnail.jpg?wid=001w000001Y8ud2AAB_M8446" preload="none" role="application" src="blob:https://clair-obscur.fandom.com/171be9e5-ea10-41cb-8957-f4c553d207ab" tabindex="0"></video><div class="lre-vjs-gradient-to-bottom lre-gradient-to-bottom basic-gradient-styling"></div><div class="lre-vjs-gradient-to-top lre-gradient-to-top basic-gradient-styling"></div><div class="lre-vjs-video-title-block lre-title-container"><div class="lre-title-pagination-block"><div class="pagination-element currently-playing">1</div><div class="pagination-element">/</div><div class="pagination-element total-items">8</div></div><div class="lre-title-text"><div class="lre-title-text-content">Honest Trailers Commentary | The Da Vinci Code</div></div><a class="lre-landing-page-link" href="https://www.youtube.com/watch?v=elIgjlFupDE" target="_blank"><div class="read-more">Read More</div><div class="lre-landing-page-icon"></div></a></div><div aria-disabled="false" class="vjs-poster" style='background-image: url("https://cdn5-fstl-tf.anyclip.com/yYzViYkBd4bFyu3qpnNY/1690235941874_640x360_thumbnail.jpg?wid=001w000001Y8ud2AAB_M8446");' tabindex="-1"></div><div aria-atomic="true" aria-live="off" class="vjs-text-track-display" translate="yes"><div style="position: absolute; inset: 0px; margin: 1.5%;"></div></div><div class="ac-lre-theater-poster" style=""><img alt="theater-aux-poster" src="https://cdn5-fstl-tf.anyclip.com/yYzViYkBd4bFyu3qpnNY/1690235942209_416x234_thumbnail.jpg?wid=001w000001Y8ud2AAB_M8446"/></div><div class="vjs-loading-spinner" dir="ltr"><span class="vjs-control-text">Video Player is loading.</span></div><button aria-disabled="false" class="vjs-big-play-button" title="Play Video" type="button"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span aria-live="polite" class="vjs-control-text">Play Video</span></button><div class="vjs-control-bar" dir="ltr"><div class="vjs-volume-panel vjs-control vjs-volume-panel-horizontal"><button aria-disabled="false" class="vjs-mute-control vjs-control vjs-button vjs-vol-3" title="Mute" type="button"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span aria-live="polite" class="vjs-control-text">Mute</span></button><div class="vjs-volume-control vjs-control vjs-volume-horizontal"><div aria-live="polite" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" aria-valuetext="100%" class="vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-horizontal" role="slider" tabindex="0"><div class="vjs-mouse-display"><div aria-hidden="true" class="vjs-volume-tooltip"></div></div><div class="vjs-volume-level" style="width: 100%;"><span class="vjs-control-text"></span></div></div></div></div><div class="vjs-duration vjs-time-control vjs-control"><span class="vjs-control-text" role="presentation">Duration </span><span aria-live="off" class="vjs-duration-display" role="presentation">28:15</span></div><div aria-hidden="true" class="vjs-time-control vjs-time-divider"><div><span>/</span></div></div><div class="vjs-current-time vjs-time-control vjs-control"><span class="vjs-control-text" role="presentation">Current Time </span><span aria-live="off" class="vjs-current-time-display" role="presentation">0:00</span></div><button aria-disabled="false" class="ac-as-button gear-icon vjs-control vjs-button" title="Advanced Settings" type="button"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span aria-live="polite" class="vjs-control-text">Advanced Settings</span><div class="vjs-playback-speed-value" id="vjs-playback-speed-value-label-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_392"></div></button><div class="vjs-progress-control vjs-control"><div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0.01" aria-valuetext="00:00 of 28:15" class="vjs-progress-holder vjs-slider vjs-slider-horizontal" role="slider" tabindex="0"><div class="vjs-load-progress" style="width: 1.41%;"><span class="vjs-control-text"><span>Loaded</span>: <span class="vjs-control-text-loaded-percentage">1.41%</span></span><div data-end="23.900333" data-start="0" style="left: 0%; width: 100%;"></div></div><div class="vjs-mouse-display"><div aria-hidden="true" class="vjs-time-tooltip"></div></div><div aria-hidden="true" class="vjs-play-progress vjs-slider-bar" style="width: 0.01%;"><div aria-hidden="true" class="vjs-time-tooltip" style="left: 2px;">00:00</div></div></div></div>
+<div class="ac-lre-chaptering-container structure-position structure-shape">
+</div>
+<div class="vjs-remaining-time vjs-time-control vjs-control"><span class="vjs-control-text" role="presentation">Remaining Time </span><span aria-hidden="true">-</span><span aria-live="off" class="vjs-remaining-time-display" role="presentation">28:15</span></div><div class="vjs-custom-control-spacer vjs-spacer"> </div><button aria-disabled="false" class="vjs-fullscreen-control vjs-control vjs-button" title="Fullscreen" type="button"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span aria-live="polite" class="vjs-control-text">Fullscreen</span></button><button aria-disabled="false" class="vjs-play-control vjs-control vjs-button vjs-playing" title="Pause" type="button"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span aria-live="polite" class="vjs-control-text">Pause</span></button><button aria-disabled="false" class="vjs-icon-custombutton vjs-control vjs-button vjs-rewind-10-control" title="Rewind 10 Seconds" type="button"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span aria-live="polite" class="vjs-control-text">Rewind 10 Seconds</span></button><button aria-disabled="false" class="vjs-icon-custombutton vjs-control vjs-button lre-next-up" title="Up Next" type="button"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span aria-live="polite" class="vjs-control-text">Up Next</span></button></div><div aria-describedby="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_314_description" aria-hidden="true" class="vjs-error-display vjs-modal-dialog vjs-hidden" role="dialog" tabindex="-1"><p class="vjs-modal-dialog-description vjs-control-text" id="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_314_description">This is a modal window.</p><div class="vjs-modal-dialog-content" role="document"></div></div><div aria-describedby="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320_description" aria-hidden="true" class="vjs-modal-dialog vjs-hidden vjs-text-track-settings" role="dialog" tabindex="-1"><p class="vjs-modal-dialog-description vjs-control-text" id="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320_description">Beginning of dialog window. Escape will cancel and close the window.</p><div class="vjs-modal-dialog-content" role="document"><div class="vjs-track-settings-colors"><fieldset class="vjs-fg-color vjs-track-setting"><legend id="captions-text-legend-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320">Text</legend><label class="vjs-label" id="captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320">Color</label><select aria-labelledby="captions-text-legend-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320"><option aria-labelledby="captions-text-legend-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-White" id="captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-White" value="#FFF">White</option><option aria-labelledby="captions-text-legend-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Black" id="captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Black" value="#000">Black</option><option aria-labelledby="captions-text-legend-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Red" id="captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Red" value="#F00">Red</option><option aria-labelledby="captions-text-legend-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Green" id="captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Green" value="#0F0">Green</option><option aria-labelledby="captions-text-legend-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Blue" id="captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Blue" value="#00F">Blue</option><option aria-labelledby="captions-text-legend-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Yellow" id="captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Yellow" value="#FF0">Yellow</option><option aria-labelledby="captions-text-legend-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Magenta" id="captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Magenta" value="#F0F">Magenta</option><option aria-labelledby="captions-text-legend-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Cyan" id="captions-foreground-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Cyan" value="#0FF">Cyan</option></select><span class="vjs-text-opacity vjs-opacity"><label class="vjs-label" id="captions-foreground-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320">Transparency</label><select aria-labelledby="captions-text-legend-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320"><option aria-labelledby="captions-text-legend-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Opaque" id="captions-foreground-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Opaque" value="1">Opaque</option><option aria-labelledby="captions-text-legend-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-foreground-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-SemiTransparent" id="captions-foreground-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-SemiTransparent" value="0.5">Semi-Transparent</option></select></span></fieldset><fieldset class="vjs-bg-color vjs-track-setting"><legend id="captions-background-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320">Background</legend><label class="vjs-label" id="captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320">Color</label><select aria-labelledby="captions-background-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320"><option aria-labelledby="captions-background-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Black" id="captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Black" value="#000">Black</option><option aria-labelledby="captions-background-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-White" id="captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-White" value="#FFF">White</option><option aria-labelledby="captions-background-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Red" id="captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Red" value="#F00">Red</option><option aria-labelledby="captions-background-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Green" id="captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Green" value="#0F0">Green</option><option aria-labelledby="captions-background-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Blue" id="captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Blue" value="#00F">Blue</option><option aria-labelledby="captions-background-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Yellow" id="captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Yellow" value="#FF0">Yellow</option><option aria-labelledby="captions-background-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Magenta" id="captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Magenta" value="#F0F">Magenta</option><option aria-labelledby="captions-background-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Cyan" id="captions-background-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Cyan" value="#0FF">Cyan</option></select><span class="vjs-bg-opacity vjs-opacity"><label class="vjs-label" id="captions-background-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320">Transparency</label><select aria-labelledby="captions-background-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320"><option aria-labelledby="captions-background-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Opaque" id="captions-background-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Opaque" value="1">Opaque</option><option aria-labelledby="captions-background-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-SemiTransparent" id="captions-background-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-SemiTransparent" value="0.5">Semi-Transparent</option><option aria-labelledby="captions-background-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-background-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Transparent" id="captions-background-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Transparent" value="0">Transparent</option></select></span></fieldset><fieldset class="vjs-window-color vjs-track-setting"><legend id="captions-window-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320">Window</legend><label class="vjs-label" id="captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320">Color</label><select aria-labelledby="captions-window-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320"><option aria-labelledby="captions-window-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Black" id="captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Black" value="#000">Black</option><option aria-labelledby="captions-window-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-White" id="captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-White" value="#FFF">White</option><option aria-labelledby="captions-window-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Red" id="captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Red" value="#F00">Red</option><option aria-labelledby="captions-window-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Green" id="captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Green" value="#0F0">Green</option><option aria-labelledby="captions-window-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Blue" id="captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Blue" value="#00F">Blue</option><option aria-labelledby="captions-window-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Yellow" id="captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Yellow" value="#FF0">Yellow</option><option aria-labelledby="captions-window-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Magenta" id="captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Magenta" value="#F0F">Magenta</option><option aria-labelledby="captions-window-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Cyan" id="captions-window-color-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Cyan" value="#0FF">Cyan</option></select><span class="vjs-window-opacity vjs-opacity"><label class="vjs-label" id="captions-window-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320">Transparency</label><select aria-labelledby="captions-window-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320"><option aria-labelledby="captions-window-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Transparent" id="captions-window-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Transparent" value="0">Transparent</option><option aria-labelledby="captions-window-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-SemiTransparent" id="captions-window-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-SemiTransparent" value="0.5">Semi-Transparent</option><option aria-labelledby="captions-window-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-window-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Opaque" id="captions-window-opacity-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Opaque" value="1">Opaque</option></select></span></fieldset></div><div class="vjs-track-settings-font"><fieldset class="vjs-font-percent vjs-track-setting"><legend class="" id="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320">Font Size</legend><select aria-labelledby="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320"><option aria-labelledby="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-50" id="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-50" value="0.50">50%</option><option aria-labelledby="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-75" id="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-75" value="0.75">75%</option><option aria-labelledby="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-100" id="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-100" value="1.00">100%</option><option aria-labelledby="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-125" id="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-125" value="1.25">125%</option><option aria-labelledby="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-150" id="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-150" value="1.50">150%</option><option aria-labelledby="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-175" id="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-175" value="1.75">175%</option><option aria-labelledby="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-200" id="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-200" value="2.00">200%</option><option aria-labelledby="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-300" id="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-300" value="3.00">300%</option><option aria-labelledby="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-400" id="captions-font-size-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-400" value="4.00">400%</option></select></fieldset><fieldset class="vjs-edge-style vjs-track-setting"><legend class="" id="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320">Text Edge Style</legend><select aria-labelledby="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320"><option aria-labelledby="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-None" id="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-None" value="none">None</option><option aria-labelledby="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Raised" id="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Raised" value="raised">Raised</option><option aria-labelledby="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Depressed" id="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Depressed" value="depressed">Depressed</option><option aria-labelledby="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Uniform" id="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Uniform" value="uniform">Uniform</option><option aria-labelledby="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Dropshadow" id="ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Dropshadow" value="dropshadow">Dropshadow</option></select></fieldset><fieldset class="vjs-font-family vjs-track-setting"><legend class="" id="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320">Font Family</legend><select aria-labelledby="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320"><option aria-labelledby="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-ProportionalSansSerif" id="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-ProportionalSansSerif" value="proportionalSansSerif">Proportional Sans-Serif</option><option aria-labelledby="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-MonospaceSansSerif" id="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-MonospaceSansSerif" value="monospaceSansSerif">Monospace Sans-Serif</option><option aria-labelledby="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-ProportionalSerif" id="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-ProportionalSerif" value="proportionalSerif">Proportional Serif</option><option aria-labelledby="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-MonospaceSerif" id="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-MonospaceSerif" value="monospaceSerif">Monospace Serif</option><option aria-labelledby="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Casual" id="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Casual" value="casual">Casual</option><option aria-labelledby="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Script" id="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-Script" value="script">Script</option><option aria-labelledby="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320 captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-SmallCaps" id="captions-font-family-ac-lre-vjs-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM_component_320-SmallCaps" value="small-caps">Small Caps</option></select></fieldset></div><div class="vjs-track-settings-controls"><button class="vjs-default-button" title="restore all settings to the default values" type="button">Reset<span class="vjs-control-text"> restore all settings to the default values</span></button><button class="vjs-done-button" type="button">Done</button></div></div><button aria-disabled="false" class="vjs-close-button vjs-control vjs-button" title="Close Modal Dialog" type="button"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span aria-live="polite" class="vjs-control-text">Close Modal Dialog</span></button><p class="vjs-control-text">End of dialog window.</p></div><div class="ac-lre-theater-top"><div class="vjs-theater-exit-control" style="display: none;"><span class="vjs-theater-exit-icon"></span><span class="vjs-theater-exit-text"></span></div><div class="vjs-theater-share-control" style="display: none;"><span class="vjs-theater-share-icon"></span><span class="vjs-theater-share-title">Share</span></div></div><div class="ac-as-menu-pane vjs-hidden"><div class="ac-as-menu-wrapper main-menu-level"><div aria-disabled="false" class="ac-as-menu-header top-level" role="button" tabindex="0">Settings<span aria-hidden="true" class="vjs-icon-placeholder"></span><span aria-live="polite" class="vjs-control-text"></span><div aria-disabled="false" class="ac-as-close-button" role="button" tabindex="0"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span aria-live="polite" class="vjs-control-text"></span></div></div><div aria-disabled="false" class="ac-as-menu-item ac-as-branch" role="button" tabindex="0">Playback Speed<span aria-hidden="true" class="vjs-icon-placeholder"></span><span aria-live="polite" class="vjs-control-text"></span><div class="ac-as-selected-label">Normal</div></div><div aria-disabled="false" class="ac-as-menu-item ac-as-branch ac-as-video-quality" role="button" tabindex="0">Video Quality<span aria-hidden="true" class="vjs-icon-placeholder"></span><span aria-live="polite" class="vjs-control-text"></span><div class="ac-as-selected-label">Auto (360p)</div></div><div aria-disabled="false" class="ac-as-menu-item ac-as-branch" role="button" tabindex="0">Closed Captions<span aria-hidden="true" class="vjs-icon-placeholder"></span><span aria-live="polite" class="vjs-control-text"></span><div class="ac-as-selected-label">Off</div></div></div></div><a class="ac-logobrand-image-destination" href="https://www.fandom.com?source=logo&amp;wid=001w000001Y8ud2AAB_M8446" target="_blank"><img alt="Brand logo" class="ac-logobrand-image" height="22px" src="https://assets.anyclip.com/pub-assets/fandomcom/fandom.png" width="42px"/></a><button aria-disabled="false" class="vjs-icon-replay-btn vjs-button lre-replay-list" title="Replay the list" type="button"><span aria-hidden="true" class="vjs-icon-placeholder"></span><span aria-live="polite" class="vjs-control-text">Replay the list</span></button>
+<div class="ac-lre-overlay-label">
+<div class="overlay-label-content-text">TOP ARTICLES</div>
+</div>
+<div class="trending-articles-container">
+<div class="nav-item-hit-area" data-index="0">
+<div class="navigation-item item-0 currently-playing" data-index="0"></div>
+</div>
+<div class="nav-item-hit-area" data-index="1">
+<div class="navigation-item item-1" data-index="1"></div>
+</div>
+<div class="nav-item-hit-area" data-index="2">
+<div class="navigation-item item-2" data-index="2"></div>
+</div>
+<div class="nav-item-hit-area" data-index="3">
+<div class="navigation-item item-3" data-index="3"></div>
+</div>
+<div class="nav-item-hit-area" data-index="4">
+<div class="navigation-item item-4" data-index="4"></div>
+</div>
+<div class="nav-item-hit-area" data-index="5">
+<div class="navigation-item item-5" data-index="5"></div>
+</div>
+<div class="nav-item-hit-area" data-index="6">
+<div class="navigation-item item-6" data-index="6"></div>
+</div>
+<div class="nav-item-hit-area" data-index="7">
+<div class="navigation-item item-7" data-index="7"></div>
+</div>
+</div>
+</div><div class="ac-lre-ima-ad-wrapper" style="position: absolute; top: 0px; left: 0px; z-index: 0; pointer-events: none; height: 299.812px; width: 533px;"><div class="ac-lre-ima-ad-container" style="position: absolute; top: 0px; left: 0px; z-index: 0; display: block; pointer-events: none; width: 533px; height: 299.812px;"><div style="position: absolute;"><video playsinline="true" style="width: 100%; height: 100%; background-color: rgb(0, 0, 0); display: none;" webkit-playsinline="true"></video></div></div></div><div class="ac-lre-display-ad-container" style="position: absolute; text-align: center; background-color: transparent; inset: 25px 25px 0px; pointer-events: none; border-radius: 0px; display: none;"><div style="display: flex; box-sizing: border-box; align-items: center; justify-content: center; pointer-events: auto; position: absolute; bottom: 0px; z-index: -1;"><div style="transform-origin: center center;"></div><button style='height: 17px; width: 17px; background-image: url("https://assets.anyclip.com/anyclip-widget/lre-widget/assets/lre_theme/bar-close-btn.svg?hash=6f7f2c8afc"); background-size: contain; background-repeat: no-repeat; background-color: rgb(255, 255, 255); display: none; position: absolute; top: -20px; padding: 0px; line-height: normal; margin: 0px; border-radius: 50%; border: 0px none; cursor: pointer; left: 0px;'></button></div><iframe allowtransparency="true" style="inset: 0px; width: 100%; height: 100%; position: absolute; border: none; background-color: transparent; z-index: -1;"></iframe></div><div class="ac-lre-fallback-ad-wrapper" style="position: absolute; inset: 0px; background-color: transparent; pointer-events: none;"><div class="ac-lre-fallback-ad-container" style="display: flex; overflow: hidden; box-sizing: border-box; align-items: center; justify-content: center; width: 533px; height: 300px;"><div style="transform-origin: center center;"></div><iframe allowtransparency="true" style="inset: 0px; width: 100%; height: 100%; position: absolute; border: none; background-color: transparent; z-index: -1;"></iframe></div></div><div class="ac-lre-ad-bar" style="display: none;"><div class="lre-ad-bar-left"></div><div class="lre-ad-bar-center"></div><div class="lre-ad-bar-right"></div></div><div class="ac-lre-spinner-holder"><div class="lds-dual-ring"><span class="the-lds-rings"></span></div></div><div class="vjs-theater-background" style="display: none;"></div><div class="ac-lre-test-resolution-indicator" style="display: none;"></div><ac-nav class="ac-context-menu" id="ac-context-menu-YP9j11SLuTemlUmy4zIeJJmnRmMuR6HM"><ul class="context-menu-items"><li class="context-menu-item"><a class="ac-context-menu-link" href="https://anyclip.com/?source=powered&amp;wid=001w000001Y8ud2AAB_M8446" target="_blank">Powered by AnyClip </a></li><li class="context-menu-item"><a class="ac-context-menu-link" href="https://anyclip.com/privacy-policy/?source=policy&amp;wid=001w000001Y8ud2AAB_M8446" target="_blank">Privacy Policy</a></li><li class="context-menu-item"><a class="ac-context-menu-link" href="https://docs.anyclip.com/en/articles/9182962-keyboard-accessibility" target="_blank">Keyboard Shortcuts</a></li></ul></ac-nav></div><div class="anti-click-area" style="display: none;"></div><div class="lre-cancel-float font-fix"></div></div></div><div class="ac-lre-playlist-horizontal">
+<div class="ac-lre-playlist-text" id="ac-lre-ph-playlist-horizontal"></div>
+<div class="ac-lre-btn-nav" data-navigate="prev" id="ac-lre-btn-playlist-horizontal-prev"><div></div></div>
+<div class="ac-lre-btn-nav" data-navigate="next" id="ac-lre-btn-playlist-horizontal-next"><div></div></div>
+</div><div class="outer-title-container"><div class="outer-title-container-text">Honest Trailers Commentary | The Da Vinci Code</div></div></div></div><div class="ac-lre-playlist-vertical">
+<div class="ac-lre-playlist-text" id="ac-lre-ph-playlist-vertical"></div>
+<div class="ac-lre-btn-nav" data-navigate="prev" id="ac-lre-btn-playlist-vertical-prev"><div></div></div>
+<div class="ac-lre-btn-nav" data-navigate="next" id="ac-lre-btn-playlist-vertical-next"><div></div></div>
+</div></div></div></div><h2><span class="mw-headline" id="Locations">Locations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" data-action="edit-section" data-testid="log-in-edit-section" data-tracking-label="log-in-edit-section" href="https://auth.fandom.com/signin?redirect=https%3A%2F%2Fclair-obscur.fandom.com%2Fwiki%2FLost_Gestrals%3Fveaction%3Dedit%26section%3D1&amp;uselang=en" title="Sign in to edit"><svg class="wds-icon wds-icon-tiny"><use xlink:href="#wds-icons-pencil-tiny"></use></svg></a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Note you can find the gestrals in any order, they're simply numbered below for easier tracking purposes.
+</p>
+<table class="fandom-table">
+<tbody><tr class="">
+<th>No.
+</th>
+<th>Image
+</th>
+<th>Act
+</th>
+<th>Location
+</th>
+<th>Reward
+</th></tr>
+<tr>
+<td>1
+</td>
+<td>
+</td>
+<td><a href="/wiki/Act_I" title="Act I">Act I</a>
+</td>
+<td>Right outside the entrance to <a href="/wiki/Esquie%27s_Nest" title="Esquie's Nest">Esquie's Nest</a>
+</td>
+<td><a href="/wiki/Gestral_(Maelle_haircut)" title="Gestral (Maelle haircut)">Gestral (Maelle haircut)</a>
+</td></tr>
+<tr>
+<td>2
+</td>
+<td>
+</td>
+<td><a href="/wiki/Act_I" title="Act I">Act I</a>
+</td>
+<td>Near <a href="/wiki/Stone_Wave_Cliffs" title="Stone Wave Cliffs">Stone Wave Cliffs</a> entrance, on the path to the right. Note you have to defeat the <a href="/wiki/Bourgeon" title="Bourgeon">Bourgeon</a> here to get to this one. <a class="text" href="https://clair-obscur.fandom.com/wiki/Map:The_Continent?marker=174" rel="noreferrer noopener" target="_blank">Interactive Map</a>
+</td>
+<td><a href="/wiki/Gestral_(Lune_haircut)" title="Gestral (Lune haircut)">Gestral (Lune haircut)</a>
+</td></tr>
+<tr>
+<td>3
+</td>
+<td>
+</td>
+<td><span class="new" data-uncrawlable-url="L3dpa2kvQWN0X0lJP2FjdGlvbj1lZGl0JnJlZGxpbms9MQ==" title="Act II (page does not exist)">Act II</span>
+</td>
+<td>On the same island as <a href="/wiki/White_Tree" title="White Tree">White Tree</a>, around the southern part of the island. <a class="text" href="https://clair-obscur.fandom.com/wiki/Map:The_Continent?marker=175" rel="noreferrer noopener" target="_blank">Interactive Map</a>
+</td>
+<td><a href="/wiki/Gestral_(Sciel_haircut)" title="Gestral (Sciel haircut)">Gestral (Sciel haircut)</a>
+</td></tr>
+<tr>
+<td>4
+</td>
+<td>
+</td>
+<td><span class="new" data-uncrawlable-url="L3dpa2kvQWN0X0lJP2FjdGlvbj1lZGl0JnJlZGxpbms9MQ==" title="Act II (page does not exist)">Act II</span>
+</td>
+<td>Once <a href="/wiki/Esquie" title="Esquie">Esquie</a> is able to break through reefs, on the large red island south of <a href="/wiki/Visages%27_Island" title="Visages' Island">Visages' Island</a>. He's near the two <a href="/wiki/Mime" title="Mime">mimes</a> here. <a class="text" href="https://clair-obscur.fandom.com/wiki/Map:The_Continent?marker=178" rel="noreferrer noopener" target="_blank">Interactive Map</a>
+</td>
+<td>Paint Break ability (destroy <a href="/wiki/Paint_Spikes" title="Paint Spikes">Paint Spikes</a>)
+</td></tr>
+<tr>
+<td>5
+</td>
+<td>
+</td>
+<td><span class="new" data-uncrawlable-url="L3dpa2kvQWN0X0lJP2FjdGlvbj1lZGl0JnJlZGxpbms9MQ==" title="Act II (page does not exist)">Act II</span>
+</td>
+<td>To the north of the <a href="/wiki/Coastal_Cave" title="Coastal Cave">Coastal Cave</a>, on the tip of the peninsula with some enemies nearby. <a class="text" href="https://clair-obscur.fandom.com/wiki/Map:The_Continent?marker=177" rel="noreferrer noopener" target="_blank">Interactive Map</a>
+</td>
+<td><a href="/wiki/Gestral_(Verso_haircut)" title="Gestral (Verso haircut)">Gestral (Verso haircut)</a>
+</td></tr>
+<tr>
+<td>6
+</td>
+<td>
+</td>
+<td><span class="new" data-uncrawlable-url="L3dpa2kvQWN0X0lJP2FjdGlvbj1lZGl0JnJlZGxpbms9MQ==" title="Act II (page does not exist)">Act II</span>
+</td>
+<td>Southeast of the entrance to <a href="/wiki/Monoco%27s_Station" title="Monoco's Station">Monoco's Station</a>, near <a href="/wiki/Strabami" title="Strabami">Strabami</a>. <a class="text" href="https://clair-obscur.fandom.com/wiki/Map:The_Continent?marker=176" rel="noreferrer noopener" target="_blank">Interactive Map</a>
+</td>
+<td><a href="/wiki/Colour_of_Lumina" title="Colour of Lumina">Colour of Lumina</a> x3
+</td></tr>
+<tr>
+<td>7
+</td>
+<td>
+</td>
+<td><span class="new" data-uncrawlable-url="L3dpa2kvQWN0X0lJST9hY3Rpb249ZWRpdCZyZWRsaW5rPTE=" title="Act III (page does not exist)">Act III</span>
+</td>
+<td>Near <span class="new" data-uncrawlable-url="L3dpa2kvVGhlX1JlYWNoZXI/YWN0aW9uPWVkaXQmcmVkbGluaz0x" title="The Reacher (page does not exist)">The Reacher</span>. You'll need to fly up to find this enclosed area on the ground level, next to the beach area. <a class="text" href="https://clair-obscur.fandom.com/wiki/Map:The_Continent?marker=85" rel="noreferrer noopener" target="_blank">Interactive Map</a>
+</td>
+<td><a href="/wiki/Colour_of_Lumina" title="Colour of Lumina">Colour of Lumina</a> x3
+</td></tr>
+<tr>
+<td>8
+</td>
+<td>
+</td>
+<td><span class="new" data-uncrawlable-url="L3dpa2kvQWN0X0lJST9hY3Rpb249ZWRpdCZyZWRsaW5rPTE=" title="Act III (page does not exist)">Act III</span>
+</td>
+<td>Outside of the <a href="/wiki/Endless_Night_Sanctuary" title="Endless Night Sanctuary">Endless Night Sanctuary</a>, a bit to the west. <a class="text" href="https://clair-obscur.fandom.com/wiki/Map:The_Continent?marker=88" rel="noreferrer noopener" target="_blank">Interactive Map</a>
+</td>
+<td><a href="/wiki/Colour_of_Lumina" title="Colour of Lumina">Colour of Lumina</a> x3
+</td></tr>
+<tr>
+<td>9
+</td>
+<td>
+</td>
+<td><span class="new" data-uncrawlable-url="L3dpa2kvQWN0X0lJST9hY3Rpb249ZWRpdCZyZWRsaW5rPTE=" title="Act III (page does not exist)">Act III</span>
+</td>
+<td>On a floating island near the southern side of the <a href="/wiki/Endless_Tower" title="Endless Tower">Endless Tower</a>. <a class="text" href="https://clair-obscur.fandom.com/wiki/Map:The_Continent?marker=87" rel="noreferrer noopener" target="_blank">Interactive Map</a>
+</td>
+<td><a href="/wiki/Colour_of_Lumina" title="Colour of Lumina">Colour of Lumina</a> x3
+</td></tr></tbody></table>
+<!-- 
+NewPP limit report
+Cached time: 20250526233339
+Cache expiry: 1209600
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.012 seconds
+Real time usage: 0.015 seconds
+Preprocessor visited node count: 30/1000000
+Post‐expand include size: 552/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+ExtLoops count: 0/200
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.599      1 Template:COE33
+100.00%    1.599      1 -total
+-->
+<!-- Saved in parser cache with key 1.43.1_prod_clairobscur:pcache:idhash:4311-0!sseVary=RegularPage!FandomDesktop!LegacyGalleries and timestamp 20250526233339 and revision id 11399. Rendering was triggered because: page-view
+ -->
+</div></div> </div>
+<div class="page-footer">
+<div class="license-description">
+		Community content is available under <a href="https://www.fandom.com/licensing">CC-BY-SA</a> unless otherwise noted.	</div>
+<div id="mw-data-after-content">
+<div id="articleComments"><div class="article-comments-app"><div class="CommentList_comment-list__SA8FA"><div class="CommentList_comment-list-header__0D9Gj"></div><div class="CommentList_empty-state__Cx7nB"><p class="CommentList_empty-state-title__Prw1V">No Comments Yet</p><p class="CommentList_empty-state-message__vSE-S">Be the first to comment on Lost Gestrals!</p></div></div></div></div>
+</div>
+</div>
+</main>

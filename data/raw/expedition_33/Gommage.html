@@ -1,0 +1,213 @@
+<main class="page__main" lang="en">
+<div class="page-side-tools__wrapper">
+<div class="page-side-tools">
+<button aria-label="Collapse" class="page-side-tool content-size-toggle" data-tooltip-attached="1" data-wds-tooltip="Collapse" data-wds-tooltip-position="right" name="content-size-toggle"><svg class="wds-icon wds-icon-small">
+<use href="#wds-icons-zoom-out-small"></use>
+</svg></button>
+<a aria-label="Sign in to edit" class="page-side-tool page-side-edit" data-tooltip-attached="1" data-tracking-label="log-in-edit-side-tool" data-wds-tooltip="Sign in to edit" data-wds-tooltip-position="right" href="https://auth.fandom.com/signin?redirect=https%3A%2F%2Fclair-obscur.fandom.com%2Fwiki%2FGommage%3Fveaction%3Dedit&amp;uselang=en" id="log-in-edit-side-tool">
+<svg class="wds-icon wds-icon-small"><use xlink:href="#wds-icons-pencil-small"></use></svg> </a>
+</div>
+</div>
+<div class="page-header" id="page-header" tabindex="-1">
+<div class="page-header__top">
+<div class="page-header__meta">
+<div class="page-header__categories">
+<span class="page-header__categories-in">in:</span>
+<a data-tracking-label="categories-top-more-0" href="/wiki/Category:Stubs" title="Category:Stubs">Stubs</a>, <a data-tracking-label="categories-top-more-1" href="/wiki/Category:Lore" title="Category:Lore">Lore</a> </div>
+</div>
+</div>
+<div class="page-header__bottom">
+<div class="page-header__title-wrapper">
+<h1 class="page-header__title" id="firstHeading">
+<span class="mw-page-title-main">Gommage</span> </h1>
+</div>
+<div class="page-header__actions" id="p-views">
+<a class="wds-button wds-is-text page-header__action-button" data-tracking-label="comments-button" href="#articleComments">
+<div class="button-counter" id="article-comments-button" style="opacity: 0;"></div>
+<svg class="wds-icon wds-icon-small"><use xlink:href="#wds-icons-comment-small"></use></svg> </a>
+<a class="wds-button wds-is-text page-header__action-button has-label" data-tracking-label="log-in-edit" href="https://auth.fandom.com/signin?redirect=https%3A%2F%2Fclair-obscur.fandom.com%2Fwiki%2FGommage%3Fveaction%3Dedit&amp;uselang=en" id="log-in-edit">
+<svg class="wds-icon wds-icon-small"><use xlink:href="#wds-icons-pencil-small"></use></svg>						Sign in to edit					</a>
+<div class="wds-dropdown">
+<div aria-controls="p-cactions" aria-label="Page Tools" class="wds-dropdown__toggle wds-button wds-is-text page-header__action-button" data-tracking-label="dropdown-actions" role="button">
+<svg class="wds-icon wds-icon-small"><use xlink:href="#wds-icons-more-small"></use></svg> </div>
+<div class="wds-dropdown__content wds-is-right-aligned wds-is-not-scrollable" id="p-cactions">
+<ul class="wds-list wds-is-linked">
+<li>
+<a accesskey="h" data-tracking-label="ca-history-dropdown" href="/wiki/Gommage?action=history" id="ca-history">
+											History										</a>
+</li>
+<li>
+<a data-tracking-label="ca-purge-dropdown" href="/wiki/Gommage?action=purge" id="ca-purge">
+											Purge										</a>
+</li>
+<li>
+<a accesskey="t" class="new" data-tracking-label="ca-talk-dropdown" href="/wiki/Talk:Gommage?action=edit&amp;redlink=1" id="ca-talk">
+											Talk (0)										</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="page-content ve-init-mw-desktopArticleTarget-targetContainer" id="content">
+<script data-name="featured-video-mapped-to-wiki">
+	(function () {
+		// we can't use mw.config here because it's too early so we need to pass this data in different way
+		const videoDetails = {
+			mapping: {"mediaId":"CR0MZ2ZP","connatixPlaylistId":"fa733fa7-0131-48d3-a444-611bc76031fe","impressionsPerSession":3,"isDefaultMapping":true},
+			impressionsPerSession: 3,
+		};
+		const videoBridgeCountries = ["AE","AG","AL","AM","AR","AT","AU","AZ","BA","BB","BD","BG","BH","BN","BO","BR","BS","BY","CA","CH","CL","CN","CO","CR","CU","CY","CZ","DE","DK","DO","DZ","EC","EE","EG","ES","FI","FR","GB","GE","GF","GG","GH","GP","GR","GT","GU","GY","HK","HN","HR","HU","ID","IE","IL","IM","IN","IQ","IR","IS","IT","JE","JM","JO","JP","KE","KG","KH","KR","KW","KY","KZ","LA","LB","LK","LT","LU","LV","LY","MA","MD","ME","MK","MM","MN","MO","MQ","MT","MU","MV","MX","MY","NG","NI","NO","NP","NZ","OM","PA","PE","PH","PK","PL","PR","PS","PT","PY","QA","RE","RO","RS","RU","SA","SC","SE","SG","SI","SK","SV","TD","TH","TN","TR","TT","TW","UA","US","UY","UZ","VE","VI","VN","ZA","ZW"];
+		const tier3VideoBridgeCountries = ["GB","BE","NL","DE","AU","MX","AR","FR","MD","CA","ES","IT","PE","CO","CL","NZ"];
+		let hasVideoOnPage = null;
+
+		function getCookieValue(cookieName) {
+			const cookieSplit = ('; ' + document.cookie).split('; ' + cookieName + '=');
+			return cookieSplit.length === 2 ? cookieSplit.pop().split(';').shift() : null;
+		}
+
+		function hasMaxedOutPlayerImpressionsInWiki() {
+			const impressionsSoFar = Number(getCookieValue('playerImpressionsInWiki')) || 0;
+			const allowedImpressions = Number(videoDetails.impressionsPerSession);
+
+			return impressionsSoFar >= allowedImpressions;
+		}
+
+		function getCountryCode() {
+			try {
+				return JSON.parse(decodeURIComponent(getCookieValue('Geo'))).country.toLowerCase();
+			} catch {
+				return null;
+			}
+		}
+
+		function isVideoBridgeAllowedForCountry() {
+			const countryCode = getCountryCode();
+
+			if (!countryCode) {
+				return false;
+			}
+
+			// If it's a default mapping, then check the country whitelist from the default mapping.
+			if (videoDetails?.mapping?.isDefaultMapping) {
+				// If the wiki is classified as a tier3 wiki, then check the country whitelist from the tier3VideoBridge whitelist.
+				const allowedCountriesForTier3Wikis = tier3VideoBridgeCountries.map(function (allowedTier3CountryCode) {
+					return allowedTier3CountryCode.toLowerCase();
+				})
+
+				return allowedCountriesForTier3Wikis.indexOf(countryCode) !== -1;
+			} else {
+				// If not a default mapping wiki (so it's a wiki mapping), then check the country whitelist from the videoBridge whitelist
+				const allowedCountries = videoBridgeCountries.map(function (allowedCountryCode) {
+					return allowedCountryCode.toLowerCase();
+				});
+
+				return allowedCountries.indexOf(countryCode) !== -1;
+			}
+		}
+
+		window.fandomIsVideoPossible = function () {
+			if (hasVideoOnPage === null) {
+				hasVideoOnPage =
+					videoDetails.mapping &&
+					isVideoBridgeAllowedForCountry() &&
+					!hasMaxedOutPlayerImpressionsInWiki();
+			}
+
+			return hasVideoOnPage;
+		};
+
+		window.canPlayVideo = function () {
+			return window.fandomIsVideoPossible()
+		};
+
+		if (!window.canPlayVideo()) {
+			document.body.classList.add('no-featured-video');
+		} else {
+			document.body.classList.add('has-featured-video');
+		}
+	})();
+</script>
+<div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject">
+<meta content="Netflix: Electric State Cast Interview" itemprop="name"/>
+<meta content="PT02M51S" itemprop="duration"/>
+<meta content="We sat down with the cast of Electric State, coming March 14th on Netflix." itemprop="description"/>
+<meta content="https://cdn.jwplayer.com/v2/media/AFCYA1P7/poster.jpg?width=720" itemprop="thumbnailUrl"/>
+<meta content="https://cdn.jwplayer.com/videos/AFCYA1P7-cSpmBcaY.mp4" itemprop="contentURL"/>
+<meta content="2025-03-10T17:00:00+00:00" itemprop="uploadDate"/>
+<div class="featured-video-player-container" id="featured-video__player-container"></div>
+</div>
+<div class="mw-body-content" id="mw-content-text"><!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-N6XD44P" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div class="bannerlong stub">
+<div class="bannerlong_title">Stub</div>
+<div class="bannerlong_text">"When one falls, we continue."<br/><i>This article is a <a href="/wiki/Category:Stubs" title="Category:Stubs">stub</a>. You can help Clair Obscur Wiki by <a class="text" href="https://clair-obscur.fandom.com/wiki/Gommage?action=edit" rel="noreferrer noopener" target="_blank">expanding it</a>.</i></div>
+</div>
+<p><b>Gommage</b> is a yearly solemn ceremony that the residents of <a href="/wiki/Lumi%C3%A8re" title="Lumière">Lumière</a> face after the Fracture.
+</p>
+<div class="gpt-ad" id="incontent_player"></div><h2><span class="mw-headline" id="History">History</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" data-action="edit-section" data-testid="log-in-edit-section" data-tracking-label="log-in-edit-section" href="https://auth.fandom.com/signin?redirect=https%3A%2F%2Fclair-obscur.fandom.com%2Fwiki%2FGommage%3Fveaction%3Dedit%26section%3D1&amp;uselang=en" title="Sign in to edit"><svg class="wds-icon wds-icon-tiny"><use xlink:href="#wds-icons-pencil-tiny"></use></svg></a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>After what became known as the Fracture that split Lumière off from the rest of the world, a giant monolith appeared on the skyline with the glowing number "100" on it. The people soon learned that on a prescribed day every year, a large, mysterious being that became known as the <a class="mw-redirect" href="/wiki/Paintress" title="Paintress">Paintress</a> would appear and change the number, counting down each year and with it, "erasing" all those of that age and older from their city. This effectively killed them while also lowering the population's age limit, pushing it closer and closer to an inevitable annihilation.
+</p><p>Over time, the Lumierans began to hold a farewell ceremony on the prescribed day every year for those that would inevitably die when the Paintress would change the number at sunset. This ceremony evolved to have those going through the gommage to wear garlands of white and red flowers from their loved ones and saying their final goodbyes before heading to the harbor to watch the monolith countdown. As many also end up as orphans before they reach adulthood, many orphanages have sprung up, along with many others volunteering to be guardians and foster children until their own untimely Gommage.
+</p><p>As an offshoot from this and the very first year the Fracture happened, <a href="/wiki/Expeditions" title="Expeditions">expeditions</a> of those willing to die sooner started to surface, typically heading out the day after a Gommage to give them the best chance to face the unknown before their own Gommage.
+</p><p>The Gommage was first discovered in Monolith Year 85, when two pairs of 85 year-old twins were killed by it. This spurred the Council of Lumière to resume the Expeditions to the Continent, only instead of searching for survivors of the Fracture, they would try and stop the Paintress from triggering it ever again.
+</p>
+<h2><span class="mw-headline" id="Notes">Notes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" data-action="edit-section" data-testid="log-in-edit-section" data-tracking-label="log-in-edit-section" href="https://auth.fandom.com/signin?redirect=https%3A%2F%2Fclair-obscur.fandom.com%2Fwiki%2FGommage%3Fveaction%3Dedit%26section%3D2&amp;uselang=en" title="Sign in to edit"><svg class="wds-icon wds-icon-tiny"><use xlink:href="#wds-icons-pencil-tiny"></use></svg></a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li>It's indicated that the way people die in Lumière upon the sunset at the end of the annual day of Gommage, by turning into ashes/rose petals and effectively disappearing, has something to do with their <a href="/wiki/Chroma" title="Chroma">Chroma</a> leaving their bodies. This is in particular contrast with the bodies of past Expeditioners that are found on the <a href="/wiki/Continent" title="Continent">Continent</a>, who were presumably slain by hostile <a href="/wiki/Nevron" title="Nevron">Nevrons</a>; here, their Chroma stays trapped in their bodies that remain in place, instead of disappearing like they do during a Gommage.</li></ul>
+<h2><span class="mw-headline" id="Trivia">Trivia</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" data-action="edit-section" data-testid="log-in-edit-section" data-tracking-label="log-in-edit-section" href="https://auth.fandom.com/signin?redirect=https%3A%2F%2Fclair-obscur.fandom.com%2Fwiki%2FGommage%3Fveaction%3Dedit%26section%3D3&amp;uselang=en" title="Sign in to edit"><svg class="wds-icon wds-icon-tiny"><use xlink:href="#wds-icons-pencil-tiny"></use></svg></a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li>Gommage means "to erase" in French.</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20250610030549
+Cache expiry: 1209600
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.007 seconds
+Real time usage: 0.009 seconds
+Preprocessor visited node count: 25/1000000
+Post‐expand include size: 400/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+ExtLoops count: 0/200
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.411      1 Template:Stub
+100.00%    1.411      1 -total
+-->
+<!-- Saved in parser cache with key 1.43.1_prod_clairobscur:pcache:idhash:283-0!sseVary=RegularPage!FandomDesktop!LegacyGalleries and timestamp 20250610030549 and revision id 14873. Rendering was triggered because: page-view
+ -->
+</div></div> </div>
+<div class="page-footer">
+<div class="wds-collapsible-panel wds-is-collapsed page-footer__categories">
+<header aria-controls="collapsible-content-categories" aria-expanded="false" class="wds-collapsible-panel__header">
+			Categories			<svg class="wds-icon wds-icon-small"><use xlink:href="#wds-icons-menu-control-small"></use></svg> </header>
+<div class="wds-collapsible-panel__content" id="collapsible-content-categories">
+<nav class="article-categories CategorySelect articlePage" id="articleCategories">
+<div class="container">
+<ul class="categories">
+<li class="special-categories-label"><a class="categoriesLink" href="/wiki/Special:Categories" title="Special:Categories">Categories</a><span>: </span></li>
+<li class="category normal" data-name="Stubs" data-namespace="" data-outertag="" data-sortkey="" data-type="normal">
+<span class="name"><a href="/wiki/Category:Stubs" title="Category:Stubs">Stubs</a></span>
+<span class="tool removeCategory"></span>
+</li>
+<li class="category normal" data-name="Lore" data-namespace="" data-outertag="" data-sortkey="" data-type="normal">
+<span class="name"><a href="/wiki/Category:Lore" title="Category:Lore">Lore</a></span>
+<span class="tool removeCategory"></span>
+</li>
+</ul>
+</div>
+</nav><a class="refpopups-configure-page" href="#configure-refpopups">[Configure Reference Popups]</a>
+</div>
+</div>
+<div class="license-description">
+		Community content is available under <a href="https://www.fandom.com/licensing">CC-BY-SA</a> unless otherwise noted.	</div>
+<div id="mw-data-after-content">
+<div id="articleComments"></div>
+</div>
+</div>
+</main>
