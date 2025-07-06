@@ -1,0 +1,12 @@
+langchain==0.3.26
+langchain-core==0.3.66
+langchain-community==0.3.25
+langchain-ollama==0.3.3
+langchain-text-splitters==0.3.8
+aiohttp>=3.8.3,<4.0.0
+pydantic-settings>=2.4.0,<3.0.0
+streamlit
+selenium
+beautifulsoup4
+python-dotenv
+faiss-cpu
